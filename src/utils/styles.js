@@ -62,6 +62,9 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid red',
     height: 100,
     padding: theme.spacing(7),
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(5),
+    },
     width: '100%',
   },
 
