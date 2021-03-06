@@ -1,48 +1,82 @@
-import React from 'react';
+import React, { Fragment, useState } from 'react';
 import useStyles from '../../utils/styles';
 import {
   AppBar,
   Toolbar,
   IconButton,
   Typography,
-  Grid,
-  Container,
+  Link,
+  Avatar,
+  CssBaseline,
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
+import '../../App.css';
 
 const Navbar = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
   const classes = useStyles();
+  console.log(showMenu);
   return (
-    <AppBar position='static'>
-      <Toolbar>
-        <Container maxWidth='lg'>
-          <Grid
-            container
-            spacing={3}
-            direction='row'
-            justify='space-between'
-            alignItems='center'
-          >
-            <Grid item className={classes.gridItem}>
-              <IconButton edge='start'>
-                <MenuIcon></MenuIcon>
-              </IconButton>
-              <Typography variant='h6'>Suat Bayrak</Typography>
-            </Grid>
-            <Grid item className={classes.gridItem}>
-              <div className={classes.list}>
-                <ul>
-                  <li>Home</li>
-                  <li>About</li>
-                  <li>Portfolio</li>
-                  <li>Contact</li>
-                </ul>
-              </div>
-            </Grid>
-          </Grid>
-        </Container>
-      </Toolbar>
-    </AppBar>
+    <Fragment>
+      <CssBaseline></CssBaseline>
+      <AppBar position='sticky' classes={classes.navbar}>
+        <Toolbar>
+          <div className={classes.left}>
+            <IconButton edge='end' size='medium'>
+              <Avatar alt='suatbayrak' className={classes.leftBtn}>
+                SB
+              </Avatar>
+            </IconButton>
+            <Typography variant='h6' className={classes.leftTypo}>
+              <a href='#!' rel='noreferrer' className={classes.leftTypo}>
+                Suat Bayrak
+              </a>
+            </Typography>
+          </div>
+
+          <div className={classes.right}>
+            <IconButton
+              edge='end'
+              className={classes.btnMenu}
+              size='medium'
+              onClick={(e) => setShowMenu(!showMenu)}
+            >
+              <MenuIcon
+                className={classes.btnMenuMenu}
+                size='medium'
+              ></MenuIcon>
+            </IconButton>
+            <ul
+              className={`${classes.list} ${classes.list2} ${
+                showMenu ? classes.showList : classes.removeList
+              } `}
+            >
+              <li className={classes.li}>
+                <a href='#!' className={classes.navLink}>
+                  Home
+                </a>
+              </li>
+              <li className={classes.li}>
+                <a href='#!' className={classes.navLink}>
+                  About
+                </a>
+              </li>
+              <li className={classes.li}>
+                <a href='#!' className={classes.navLink}>
+                  Portfolio
+                </a>
+              </li>
+              <li className={classes.li}>
+                <a href='#!' className={classes.navLink}>
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+        </Toolbar>
+      </AppBar>
+    </Fragment>
   );
 };
 

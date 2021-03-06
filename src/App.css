@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.makeStyles-list-9 {
+  left: -100%;
+}
+
+@media (min-width: 0) and (max-width: 960px) {
+  .MuiIconButton-label svg {
+    font-size: 40px;
+  }
+}
