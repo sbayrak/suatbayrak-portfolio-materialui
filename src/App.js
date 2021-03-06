@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './components/layout/Navbar';
 import { Typography } from '@material-ui/core';
-import useStyles from './utils/styles';
+import useStyles from './components/layout/styles';
 
 function App() {
   const classes = useStyles();

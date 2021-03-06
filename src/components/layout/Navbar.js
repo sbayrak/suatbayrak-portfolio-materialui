@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import useStyles, { theme } from '../../utils/styles';
+import useStyles, { theme } from './styles';
 import {
   AppBar,
   Toolbar,
@@ -22,7 +22,7 @@ import '../../App.css';
 const useStyles2 = makeStyles((theme) => ({
   mobileMenuItem: {
     border: '1px solid red',
-    height: 200,
+    height: 100,
     padding: theme.spacing(5),
     [theme.breakpoints.down('xs')]: {
       padding: theme.spacing(2),
