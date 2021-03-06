@@ -1,4 +1,10 @@
-import { makeStyles } from '@material-ui/core/styles';
+import {
+  makeStyles,
+  createMuiTheme,
+  ThemeProvider,
+} from '@material-ui/core/styles';
+
+const theme = createMuiTheme({});
 
 const useStyles = makeStyles((theme) => ({
   test: {
@@ -18,9 +24,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#222',
   },
   leftTypo: {
-    color: '#000',
+    color: '#e3e3e3',
     textDecoration: 'none',
     display: 'inline',
+    paddingLeft: theme.spacing(1),
     [theme.breakpoints.down('xs')]: {
       display: 'none',
     },
@@ -34,64 +41,47 @@ const useStyles = makeStyles((theme) => ({
   },
   btnMenu: {
     width: '100%',
-    display: 'none',
-    [theme.breakpoints.between('xs', 'sm')]: {
-      display: 'inline-block',
-    },
-  },
-  btnMenuMenu: {
-    fontSize: '25px',
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '25px',
-      color: '#e3e3e3',
-      display: 'flex',
-      justifyContent: 'flex-end',
+    display: 'flex',
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
     },
   },
   list: {
     display: 'flex',
     justifyContent: 'space-around',
     listStyle: 'none',
+  },
 
-    [theme.breakpoints.down('sm')]: {
-      height: '100vh',
-      position: 'absolute',
-      flexDirection: 'column',
-      backgroundColor: 'black',
-      width: '100%',
-      left: '-0%',
+  mobileMenu: {
+    display: 'block',
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
+  },
+  mobileMenuItem: {
+    border: '1px solid red',
+    height: 100,
+    padding: theme.spacing(7),
+    width: '100%',
+  },
+
+  desktopMenu: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
       display: 'flex',
-      justifyContent: 'center',
-      transition: '0.5s ease-in-out',
-      fontSize: theme.spacing(5),
-      padding: theme.spacing(3),
-      marginTop: 0,
     },
   },
-  li: {
-    [theme.breakpoints.down('sm')]: {
-      padding: '25px 0',
-      width: '100%',
-    },
+  desktopMenuUl: {
+    width: '60%',
+    margin: '0 auto',
+    listStyle: 'none',
+    display: 'flex',
+    justifyContent: 'space-around',
   },
-  navLink: {
-    color: '#e3e3e3',
-    textDecoration: 'none',
-    [theme.breakpoints.down('sm')]: {
-      padding: '20px 10px',
-      width: '100%',
-    },
-  },
-  showList: {
-    [theme.breakpoints.down('sm')]: {
-      left: 0,
-    },
-  },
-  removeList: {
-    [theme.breakpoints.down('sm')]: {
-      left: '-100%',
-    },
+  desktopMenuUlLink: {
+    color: theme.palette.grey[200],
   },
 }));
 
 export default useStyles;
+export { theme, ThemeProvider };
