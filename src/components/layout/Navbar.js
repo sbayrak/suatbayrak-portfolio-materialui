@@ -10,6 +10,7 @@ import {
   CssBaseline,
   Menu,
   MenuItem,
+  makeStyles,
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from '@material-ui/icons/Home';
@@ -18,6 +19,17 @@ import CodeIcon from '@material-ui/icons/Code';
 import MailIcon from '@material-ui/icons/Mail';
 import '../../App.css';
 
+const useStyles2 = makeStyles((theme) => ({
+  mobileMenuItem: {
+    border: '1px solid red',
+    height: 200,
+    padding: theme.spacing(5),
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(2),
+    },
+    width: '100%',
+  },
+}));
 const Navbar = () => {
   const styles = {
     mobileMenuLink: {
@@ -31,6 +43,7 @@ const Navbar = () => {
     },
   };
   const classes = useStyles();
+  const classes2 = useStyles2();
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
@@ -50,7 +63,7 @@ const Navbar = () => {
       onClose={handleClose}
       className={classes.mobileMenuMenu}
     >
-      <MenuItem className={classes.mobileMenuItem}>
+      <MenuItem className={classes2.mobileMenuItem}>
         <Link href='/home' style={styles.mobileMenuLink}>
           <HomeIcon></HomeIcon>
           <Typography variant='span' style={{ paddingLeft: theme.spacing(1) }}>
@@ -58,7 +71,7 @@ const Navbar = () => {
           </Typography>
         </Link>
       </MenuItem>
-      <MenuItem onClick={handleClose} className={classes.mobileMenuItem}>
+      <MenuItem onClick={handleClose} className={classes2.mobileMenuItem}>
         <Link href='/about' style={styles.mobileMenuLink}>
           <InfoIcon></InfoIcon>
           <Typography variant='span' style={{ paddingLeft: theme.spacing(1) }}>
@@ -66,7 +79,7 @@ const Navbar = () => {
           </Typography>
         </Link>
       </MenuItem>
-      <MenuItem onClick={handleClose} className={classes.mobileMenuItem}>
+      <MenuItem onClick={handleClose} className={classes2.mobileMenuItem}>
         <Link href='/portfolio' style={styles.mobileMenuLink}>
           <CodeIcon></CodeIcon>
           <Typography variant='span' style={{ paddingLeft: theme.spacing(1) }}>
@@ -74,7 +87,7 @@ const Navbar = () => {
           </Typography>
         </Link>
       </MenuItem>
-      <MenuItem onClick={handleClose} className={classes.mobileMenuItem}>
+      <MenuItem onClick={handleClose} className={classes2.mobileMenuItem}>
         <Link href='/contact' style={styles.mobileMenuLink}>
           <MailIcon></MailIcon>
           <Typography variant='span' style={{ paddingLeft: theme.spacing(1) }}>

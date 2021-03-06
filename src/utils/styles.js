@@ -61,9 +61,9 @@ const useStyles = makeStyles((theme) => ({
   mobileMenuItem: {
     border: '1px solid red',
     height: 100,
-    padding: theme.spacing(7),
+    padding: theme.spacing(5),
     [theme.breakpoints.down('xs')]: {
-      padding: theme.spacing(5),
+      padding: theme.spacing(2),
     },
     width: '100%',
   },
