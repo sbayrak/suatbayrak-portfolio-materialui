@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
     backgroundColor: theme.palette.grey[900],
     border: '1px solid cyan',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
@@ -30,23 +30,34 @@ const useStyles = makeStyles((theme) => ({
   },
   gridContainer: {
     border: '1px solid yellow',
-    height: '85vh',
+    height: '100vh',
+    [theme.breakpoints.only('sm')]: {
+      height: '90vh',
+    },
+    [theme.breakpoints.only('xs')]: {
+      height: '85vh',
+    },
   },
   gridItem: {
     border: '1px solid white',
-    [theme.breakpoints.down('xs')]: { marginTop: theme.spacing(3) },
+    [theme.breakpoints.down('sm')]: {
+      marginTop: theme.spacing(3),
+    },
   },
   gridItemWrapper: {
     width: '50%',
     margin: '0 auto',
     textAlign: 'start',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       width: '80%',
     },
   },
   rightTypo1: {
     fontWeight: theme.typography.fontWeightBold,
     color: '#f9c11c',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '16px',
+    },
     [theme.breakpoints.down('xs')]: {
       fontSize: '14px',
     },
@@ -54,13 +65,16 @@ const useStyles = makeStyles((theme) => ({
   rightTypo2: {
     fontWeight: 900,
     color: theme.palette.grey[100],
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '50px',
+    },
     [theme.breakpoints.down('xs')]: {
       fontSize: '18px',
     },
   },
   rightTypo3: {
     color: theme.palette.grey[500],
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       fontSize: '12px',
     },
   },
@@ -74,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.grey[100],
     fontWeight: theme.typography.fontWeightBold,
     borderBottom: `1px solid #f9c11c`,
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       fontSize: '10px',
     },
   },
@@ -92,7 +106,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   rightUlLiBtnIcon: {
-    fontSize: '24px',
+    fontSize: '44px',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '30px',
+    },
     [theme.breakpoints.down('xs')]: {
       fontSize: '26px',
     },
@@ -107,7 +124,7 @@ const useStyles = makeStyles((theme) => ({
       width: 350,
     },
     [theme.breakpoints.down('sm')]: {
-      width: 300,
+      width: 200,
     },
     [theme.breakpoints.down('xs')]: {
       width: 150,
