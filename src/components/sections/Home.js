@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 900,
     color: theme.palette.grey[100],
     [theme.breakpoints.down('sm')]: {
-      fontSize: '50px',
+      fontSize: '40px',
     },
     [theme.breakpoints.down('xs')]: {
       fontSize: '18px',
