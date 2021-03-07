@@ -1,18 +1,20 @@
 import './App.css';
 import Navbar from './components/layout/Navbar';
-import { Typography } from '@material-ui/core';
-import useStyles from './components/layout/styles';
+import { makeStyles } from '@material-ui/core/styles';
+import Home from './components/sections/Home';
 
-function App() {
+const useStyles = makeStyles((theme) => ({
+  bg: { backgroundColor: theme.palette.grey[900] },
+}));
+
+const App = () => {
   const classes = useStyles();
   return (
-    <div className='App'>
+    <div className={`App ${classes.bg}`}>
       <Navbar></Navbar>
-      <Typography variant='h2' className={classes.test}>
-        Suat
-      </Typography>
+      <Home></Home>
     </div>
   );
-}
+};
 
 export default App;
