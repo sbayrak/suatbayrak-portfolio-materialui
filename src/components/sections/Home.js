@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import suatbayrak512 from '../../img/suatbayrak512.png';
-import suatbayrak192 from '../../img/suatbayrak192.png';
 import {
   Container,
   CssBaseline,
@@ -8,14 +7,11 @@ import {
   Grid,
   IconButton,
   Link,
-  Card,
-  CardMedia,
 } from '@material-ui/core';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import { makeStyles } from '@material-ui/core/styles';
-import { theme } from '../layout/styles';
 
 const useStyles = makeStyles((theme) => ({
   homeContainer: {

@@ -1,9 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import {
-  makeStyles,
-  createMuiTheme,
-  ThemeProvider,
-} from '@material-ui/core/styles';
+import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
 import {
   AppBar,
   Toolbar,
