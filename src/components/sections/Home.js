@@ -29,7 +29,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   gridContainer: {
-    border: '1px solid yellow',
     height: '100vh',
     [theme.breakpoints.only('sm')]: {
       height: '90vh',
@@ -39,7 +38,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   gridItem: {
-    border: '1px solid white',
     [theme.breakpoints.down('sm')]: {
       marginTop: theme.spacing(3),
     },
@@ -114,11 +112,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '26px',
     },
   },
-  rightGridImg: {
-    border: '1px solid red',
-  },
   rightImg: {
-    border: '1px solid white',
     width: 512,
     [theme.breakpoints.down('md')]: {
       width: 350,
