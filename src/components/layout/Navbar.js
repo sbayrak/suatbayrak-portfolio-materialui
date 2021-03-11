@@ -176,7 +176,7 @@ const Navbar = () => {
       <AppBar
         position='fixed'
         classes={classes.navbar}
-        style={{ background: 'transparent', top: '0' }}
+        style={{ background: '#212121', top: '0' }}
       >
         <Toolbar>
           <div className={classes.left}>

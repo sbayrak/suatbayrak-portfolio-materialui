@@ -12,6 +12,10 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '52px',
     },
   },
+  gridContainer: {
+    borderTop: '1px solid rgba(249, 193, 28, 0.7)',
+    paddingTop: theme.spacing(3),
+  },
 }));
 
 const Portfolio = () => {
@@ -36,7 +40,12 @@ const Portfolio = () => {
               <Typography></Typography>
             </Grid>
 
-            <Grid container xs={12} spacing={2}>
+            <Grid
+              container
+              xs={12}
+              spacing={2}
+              className={classes.gridContainer}
+            >
               {portfoliosJSON.map((portfolio, index) => (
                 <PortfolioCard
                   key={index}

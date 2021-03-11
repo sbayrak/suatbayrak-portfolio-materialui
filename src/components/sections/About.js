@@ -11,16 +11,13 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-  aboutContainer: {
-    border: '1px solid red',
-  },
+  aboutContainer: {},
   gridContainer: {
-    border: '1px solid yellow',
     padding: theme.spacing(1),
   },
   gridItem: {
-    border: '1px solid blue',
     padding: theme.spacing(1),
+    borderBottom: '1px solid rgba(249, 193, 28, 0.7)',
   },
   Typo1: {
     fontWeight: theme.typography.fontWeightBold,
@@ -34,11 +31,11 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.spacing(2),
   },
   gridEdu: {
-    border: '1px solid red',
     padding: theme.spacing(2),
     textAlign: 'start',
     flexDirection: 'column',
     alignItems: 'flex-start',
+    borderBottom: '1px solid rgba(249, 193, 28, 0.1)',
   },
   Typo2: {
     fontWeight: theme.typography.fontWeightMedium,
@@ -67,7 +64,6 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   gridSkills: {
-    border: '1px solid blue',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
   },
@@ -75,9 +71,7 @@ const useStyles = makeStyles((theme) => ({
     width: 500,
     borderRadius: '5px',
   },
-  papers: {
-    border: '1px solid yellow',
-  },
+  papers: {},
   gridPaper: {
     padding: theme.spacing(1),
     [theme.breakpoints.down('sm')]: {

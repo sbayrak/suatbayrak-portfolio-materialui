@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
   homeContainer: {
     height: '100vh',
     backgroundColor: theme.palette.grey[900],
-    border: '1px solid cyan',
     [theme.breakpoints.down('sm')]: {
       display: 'flex',
       justifyContent: 'center',
