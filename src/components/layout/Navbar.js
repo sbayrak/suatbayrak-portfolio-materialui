@@ -136,7 +136,7 @@ const Navbar = () => {
       className={classes.mobileMenuMenu}
     >
       <MenuItem className={classes.mobileMenuItem}>
-        <Link href='/home' style={styles.mobileMenuLink}>
+        <Link href='#home' style={styles.mobileMenuLink}>
           <HomeIcon></HomeIcon>
           <Typography variant='span' style={{ paddingLeft: theme.spacing(1) }}>
             Home
@@ -144,7 +144,7 @@ const Navbar = () => {
         </Link>
       </MenuItem>
       <MenuItem onClick={handleClose} className={classes.mobileMenuItem}>
-        <Link href='/about' style={styles.mobileMenuLink}>
+        <Link href='#about' style={styles.mobileMenuLink}>
           <InfoIcon></InfoIcon>
           <Typography variant='span' style={{ paddingLeft: theme.spacing(1) }}>
             About
@@ -152,7 +152,7 @@ const Navbar = () => {
         </Link>
       </MenuItem>
       <MenuItem onClick={handleClose} className={classes.mobileMenuItem}>
-        <Link href='/portfolio' style={styles.mobileMenuLink}>
+        <Link href='#portfolio' style={styles.mobileMenuLink}>
           <CodeIcon></CodeIcon>
           <Typography variant='span' style={{ paddingLeft: theme.spacing(1) }}>
             Portfolio
@@ -160,7 +160,7 @@ const Navbar = () => {
         </Link>
       </MenuItem>
       <MenuItem onClick={handleClose} className={classes.mobileMenuItem}>
-        <Link href='/contact' style={styles.mobileMenuLink}>
+        <Link href='#contact' style={styles.mobileMenuLink}>
           <MailIcon></MailIcon>
           <Typography variant='span' style={{ paddingLeft: theme.spacing(1) }}>
             Contact

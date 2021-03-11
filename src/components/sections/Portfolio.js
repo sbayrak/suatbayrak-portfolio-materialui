@@ -8,6 +8,9 @@ const useStyles = makeStyles((theme) => ({
   Typo1: {
     fontWeight: theme.typography.fontWeightBold,
     color: theme.palette.grey[100],
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '52px',
+    },
   },
 }));
 
@@ -16,29 +19,34 @@ const Portfolio = () => {
 
   return (
     <Fragment>
-      <CssBaseline></CssBaseline>
-      <Container maxWidth='lg'>
-        <Grid container>
-          <Grid
-            container
-            item
-            xs={12}
-            justify='space-between'
-            alignItems='center'
-          >
-            <Typography variant='h2' gutterBottom className={classes.Typo1}>
-              Portfolio
-            </Typography>
-            <Typography></Typography>
-          </Grid>
+      <div id='#portfolio'>
+        <CssBaseline></CssBaseline>
+        <Container maxWidth='lg'>
+          <Grid container>
+            <Grid
+              container
+              item
+              xs={12}
+              justify='space-between'
+              alignItems='center'
+            >
+              <Typography variant='h2' gutterBottom className={classes.Typo1}>
+                Portfolio
+              </Typography>
+              <Typography></Typography>
+            </Grid>
 
-          <Grid container xs={12} spacing={2}>
-            {portfoliosJSON.map((portfolio, index) => (
-              <PortfolioCard key={index} portfolio={portfolio}></PortfolioCard>
-            ))}
+            <Grid container xs={12} spacing={2}>
+              {portfoliosJSON.map((portfolio, index) => (
+                <PortfolioCard
+                  key={index}
+                  portfolio={portfolio}
+                ></PortfolioCard>
+              ))}
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </div>
     </Fragment>
   );
 };

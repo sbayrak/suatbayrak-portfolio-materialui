@@ -127,107 +127,110 @@ const Home = () => {
   return (
     <Fragment>
       <CssBaseline></CssBaseline>
-      <Container maxWidth='xl' className={classes.homeContainer}>
-        <Grid
-          container
-          justify='space-evenly'
-          alignItems='center'
-          className={classes.gridContainer}
-        >
-          <Grid item sm={12} md={6} className={classes.gridItem}>
-            <div className={classes.gridItemWrapper}>
-              <Typography
-                variant='h5'
-                gutterBottom
-                className={classes.rightTypo1}
-              >
-                WEB DEVELOPER
-              </Typography>
-              <Typography
-                variant='h1'
-                gutterBottom
-                className={classes.rightTypo2}
-              >
-                SUAT <br></br> BAYRAK
-              </Typography>
-              <Typography
-                variant='body1'
-                gutterBottom
-                className={classes.rightTypo3}
-              >
-                Full stack web developer and computer engineer. Mostly focusing
-                on <span className={classes.styleMERN}>MERN</span> stack
-                <br></br>
-                <Typography variant='body2'>
-                  Need a website ?
-                  <Typography variant='overline'>
-                    <Link href='#contact' className={classes.rightTypo4}>
-                      Please contact with me!
-                    </Link>
+      <div id='#home'>
+        <Container maxWidth='xl' className={classes.homeContainer}>
+          <Grid
+            container
+            justify='space-evenly'
+            alignItems='center'
+            className={classes.gridContainer}
+          >
+            <Grid item sm={12} md={6} className={classes.gridItem}>
+              <div className={classes.gridItemWrapper}>
+                <Typography
+                  variant='h5'
+                  gutterBottom
+                  className={classes.rightTypo1}
+                >
+                  WEB DEVELOPER
+                </Typography>
+                <Typography
+                  variant='h1'
+                  gutterBottom
+                  className={classes.rightTypo2}
+                >
+                  SUAT <br></br> BAYRAK
+                </Typography>
+                <Typography
+                  variant='body1'
+                  gutterBottom
+                  className={classes.rightTypo3}
+                >
+                  Full stack web developer and computer engineer. Mostly
+                  focusing on <span className={classes.styleMERN}>MERN</span>{' '}
+                  stack
+                  <br></br>
+                  <Typography variant='body2'>
+                    Need a website ?
+                    <Typography variant='overline'>
+                      <Link href='#contact' className={classes.rightTypo4}>
+                        Please contact with me!
+                      </Link>
+                    </Typography>
                   </Typography>
                 </Typography>
-              </Typography>
-              <ul className={classes.rightUl}>
-                <li>
-                  <IconButton>
-                    <Link
-                      href='https://www.linkedin.com/in/suat-bayrak/'
-                      target='_blank'
-                      rel='noreferrer'
-                      className={classes.rightUlLiBtn}
-                    >
-                      <LinkedInIcon
-                        className={classes.rightUlLiBtnIcon}
-                      ></LinkedInIcon>
-                    </Link>
-                  </IconButton>
-                </li>
-                <li>
-                  <IconButton>
-                    <Link
-                      href='https://github.com/sbayrak'
-                      target='_blank'
-                      rel='noreferrer'
-                      className={classes.rightUlLiBtn}
-                    >
-                      <GitHubIcon
-                        className={classes.rightUlLiBtnIcon}
-                      ></GitHubIcon>
-                    </Link>
-                  </IconButton>
-                </li>
-                <li>
-                  <IconButton>
-                    <Link
-                      href='https://www.instagram.com/sbayrak__/'
-                      target='_blank'
-                      rel='noreferrer'
-                      className={classes.rightUlLiBtn}
-                    >
-                      <InstagramIcon
-                        className={classes.rightUlLiBtnIcon}
-                      ></InstagramIcon>
-                    </Link>
-                  </IconButton>
-                </li>
-              </ul>
-            </div>
+                <ul className={classes.rightUl}>
+                  <li>
+                    <IconButton>
+                      <Link
+                        href='https://www.linkedin.com/in/suat-bayrak/'
+                        target='_blank'
+                        rel='noreferrer'
+                        className={classes.rightUlLiBtn}
+                      >
+                        <LinkedInIcon
+                          className={classes.rightUlLiBtnIcon}
+                        ></LinkedInIcon>
+                      </Link>
+                    </IconButton>
+                  </li>
+                  <li>
+                    <IconButton>
+                      <Link
+                        href='https://github.com/sbayrak'
+                        target='_blank'
+                        rel='noreferrer'
+                        className={classes.rightUlLiBtn}
+                      >
+                        <GitHubIcon
+                          className={classes.rightUlLiBtnIcon}
+                        ></GitHubIcon>
+                      </Link>
+                    </IconButton>
+                  </li>
+                  <li>
+                    <IconButton>
+                      <Link
+                        href='https://www.instagram.com/sbayrak__/'
+                        target='_blank'
+                        rel='noreferrer'
+                        className={classes.rightUlLiBtn}
+                      >
+                        <InstagramIcon
+                          className={classes.rightUlLiBtnIcon}
+                        ></InstagramIcon>
+                      </Link>
+                    </IconButton>
+                  </li>
+                </ul>
+              </div>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              className={`${classes.gridItem} ${classes.rightGridImg} `}
+            >
+              <img
+                src={suatbayrak512}
+                alt='suatbayrak'
+                className={classes.rightImg}
+                style={{ borderRadius: '25%' }}
+              />
+            </Grid>
           </Grid>
-          <Grid
-            item
-            xs={12}
-            md={6}
-            className={`${classes.gridItem} ${classes.rightGridImg} `}
-          >
-            <img
-              src={suatbayrak512}
-              alt='suatbayrak'
-              className={classes.rightImg}
-              style={{ borderRadius: '25%' }}
-            />
-          </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </div>
     </Fragment>
   );
 };

@@ -25,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
   Typo1: {
     fontWeight: theme.typography.fontWeightBold,
     color: theme.palette.grey[100],
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '52px',
+    },
   },
   Link1: {
     color: '#f9c11c',
@@ -40,9 +43,15 @@ const useStyles = makeStyles((theme) => ({
   Typo2: {
     fontWeight: theme.typography.fontWeightMedium,
     color: theme.palette.grey[100],
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '24px',
+    },
   },
   Typo3: {
     color: theme.palette.grey[50],
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '12px',
+    },
   },
   gitLink: {
     color: '#f9c11c',
@@ -71,6 +80,9 @@ const useStyles = makeStyles((theme) => ({
   },
   gridPaper: {
     padding: theme.spacing(1),
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '12px',
+    },
   },
   paper: {
     padding: theme.spacing(2),
