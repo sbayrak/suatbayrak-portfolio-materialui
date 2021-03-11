@@ -17,12 +17,28 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   card: {
     backgroundColor: theme.palette.grey[200],
+    [theme.breakpoints.down('sm')]: {
+      height: 250,
+    },
+  },
+  cardImg: {
+    [theme.breakpoints.down('sm')]: {
+      height: 75,
+    },
   },
   cardDesc: {
     minHeight: 100,
+    [theme.breakpoints.down('sm')]: {
+      minHeight: 55,
+      fontSize: '11px',
+    },
   },
   bottomCardAction: {
     color: theme.palette.grey[800],
+  },
+  bottomCardLink: {
+    color: theme.palette.grey[800],
+    textDecoration: 'none',
   },
 }));
 
@@ -39,6 +55,7 @@ const PortfolioCard = ({ portfolio }) => {
             height='150'
             image={portfolio.logo === 'mernLogo' ? mernLogo : reactLogo}
             title='MERN'
+            className={classes.cardImg}
           />
           <CardContent>
             <Typography gutterBottom variant='h5' component='h2'>
@@ -54,20 +71,28 @@ const PortfolioCard = ({ portfolio }) => {
             </Typography>
           </CardContent>
         </CardActionArea>
-        <CardActions>
-          <Button
-            size='small'
-            color='primary'
-            className={classes.bottomCardAction}
-          >
-            Repository
+        <CardActions className={classes.bottomCardAction}>
+          <Button size='small' color='primary'>
+            <Link
+              href={portfolio.repo}
+              className={classes.bottomCardAction}
+              rel='noreferrer'
+              target='_blank'
+              style={{ textDecoration: 'none' }}
+            >
+              Repository
+            </Link>
           </Button>
-          <Button
-            size='small'
-            color='primary'
-            className={classes.bottomCardAction}
-          >
-            <Link>asd</Link>
+          <Button size='small' color='primary'>
+            <Link
+              href={portfolio.website}
+              className={classes.bottomCardAction}
+              rel='noreferrer'
+              target='_blank'
+              style={{ textDecoration: 'none' }}
+            >
+              Website
+            </Link>
           </Button>
         </CardActions>
       </Card>
