@@ -270,6 +270,7 @@ const About = () => {
           </Grid>
         </div>
         {/* WRAPPER GRID ABOVE */}
+        <Typography gutterBottom style={{ height: 150 }}></Typography>
       </Container>
     </Fragment>
   );
