@@ -163,7 +163,7 @@ const Home = () => {
                   >
                     Full stack web developer and computer engineer. Mostly
                     focusing on <span className={classes.styleMERN}>MERN</span>
-                    stack
+                    &nbsp; stack
                     <br></br>
                     <Typography variant='body2'>
                       Need a website ?
