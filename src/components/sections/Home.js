@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import suatbayrak512 from '../../img/suatbayrak512.png';
+import Fade from 'react-reveal/Fade';
 import {
   Container,
   CssBaseline,
@@ -136,38 +137,44 @@ const Home = () => {
           >
             <Grid item sm={12} md={6} className={classes.gridItem}>
               <div className={classes.gridItemWrapper}>
-                <Typography
-                  variant='h5'
-                  gutterBottom
-                  className={classes.rightTypo1}
-                >
-                  WEB DEVELOPER
-                </Typography>
-                <Typography
-                  variant='h1'
-                  gutterBottom
-                  className={classes.rightTypo2}
-                >
-                  SUAT <br></br> BAYRAK
-                </Typography>
-                <Typography
-                  variant='body1'
-                  gutterBottom
-                  className={classes.rightTypo3}
-                >
-                  Full stack web developer and computer engineer. Mostly
-                  focusing on <span className={classes.styleMERN}>MERN</span>{' '}
-                  stack
-                  <br></br>
-                  <Typography variant='body2'>
-                    Need a website ?
-                    <Typography variant='overline'>
-                      <Link href='#contact' className={classes.rightTypo4}>
-                        Please contact with me!
-                      </Link>
+                <Fade right>
+                  <Typography
+                    variant='h5'
+                    gutterBottom
+                    className={classes.rightTypo1}
+                  >
+                    WEB DEVELOPER
+                  </Typography>
+                </Fade>
+                <Fade left>
+                  <Typography
+                    variant='h1'
+                    gutterBottom
+                    className={classes.rightTypo2}
+                  >
+                    SUAT <br></br> BAYRAK
+                  </Typography>
+                </Fade>
+                <Fade right>
+                  <Typography
+                    variant='body1'
+                    gutterBottom
+                    className={classes.rightTypo3}
+                  >
+                    Full stack web developer and computer engineer. Mostly
+                    focusing on <span className={classes.styleMERN}>MERN</span>
+                    stack
+                    <br></br>
+                    <Typography variant='body2'>
+                      Need a website ?
+                      <Typography variant='overline'>
+                        <Link href='#contact' className={classes.rightTypo4}>
+                          Please contact with me!
+                        </Link>
+                      </Typography>
                     </Typography>
                   </Typography>
-                </Typography>
+                </Fade>
                 <ul className={classes.rightUl}>
                   <li>
                     <IconButton>
@@ -220,12 +227,14 @@ const Home = () => {
               md={6}
               className={`${classes.gridItem} ${classes.rightGridImg} `}
             >
-              <img
-                src={suatbayrak512}
-                alt='suatbayrak'
-                className={classes.rightImg}
-                style={{ borderRadius: '25%' }}
-              />
+              <Fade right>
+                <img
+                  src={suatbayrak512}
+                  alt='suatbayrak'
+                  className={classes.rightImg}
+                  style={{ borderRadius: '25%' }}
+                />
+              </Fade>
             </Grid>
           </Grid>
         </Container>

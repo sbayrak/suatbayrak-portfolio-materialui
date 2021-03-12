@@ -3,6 +3,7 @@ import { Typography, CssBaseline, Container, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import PortfolioCard from './PortfolioCard';
 import portfoliosJSON from './portfolios.json';
+import Flip from 'react-reveal/Flip';
 
 const useStyles = makeStyles((theme) => ({
   portfolioContainer: {
@@ -40,10 +41,12 @@ const Portfolio = () => {
               justify='space-between'
               alignItems='center'
             >
-              <Typography variant='h2' gutterBottom className={classes.Typo1}>
-                Portfolio
-              </Typography>
-              <Typography></Typography>
+              <Flip left>
+                <Typography variant='h2' gutterBottom className={classes.Typo1}>
+                  Portfolio
+                </Typography>
+                <Typography></Typography>
+              </Flip>
             </Grid>
 
             <Grid

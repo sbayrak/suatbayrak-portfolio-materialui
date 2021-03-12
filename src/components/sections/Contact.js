@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { Fragment, useState } from 'react';
+import Fade from 'react-reveal/Fade';
+import Flip from 'react-reveal/Flip';
 import MuiAlert from '@material-ui/lab/Alert';
 import {
   CssBaseline,
@@ -211,36 +213,44 @@ const Contact = () => {
             <Grid container className={classes.gridContainer}>
               <Grid container justify='space-between' item xs={12}>
                 <Grid container item xs={12} justify='space-between'>
-                  <Typography
-                    variant='h2'
-                    gutterBottom
-                    className={classes.Typo0}
-                  >
-                    Contact
-                  </Typography>
-                  <Typography></Typography>
+                  <Flip right>
+                    <Typography
+                      variant='h2'
+                      gutterBottom
+                      className={classes.Typo0}
+                    >
+                      Contact
+                    </Typography>
+                    <Typography></Typography>
+                  </Flip>
                 </Grid>
               </Grid>
               <Grid item xs={12} className={classes.subGridItemTop}>
-                <Typography variant='h5' className={classes.Typo1} gutterBottom>
-                  Reach to me by e-mail
-                </Typography>
-                <Typography
-                  variant='body1'
-                  gutterBottom
-                  className={classes.Typo2}
-                >
-                  <Link
-                    href='mailto:suat.bayrak@bilgiedu.net'
-                    className={classes.Typo2Link}
-                    style={{ textDecoration: 'none' }}
+                <Fade left>
+                  <Typography
+                    variant='h5'
+                    className={classes.Typo1}
+                    gutterBottom
                   >
-                    <LinkIcon style={{ color: '#f9c11c' }}></LinkIcon>
-                    <Typography className={classes.Typo2mail}>
-                      suat.bayrak@bilgiedu.net
-                    </Typography>
-                  </Link>
-                </Typography>
+                    Reach to me by e-mail
+                  </Typography>
+                  <Typography
+                    variant='body1'
+                    gutterBottom
+                    className={classes.Typo2}
+                  >
+                    <Link
+                      href='mailto:suat.bayrak@bilgiedu.net'
+                      className={classes.Typo2Link}
+                      style={{ textDecoration: 'none' }}
+                    >
+                      <LinkIcon style={{ color: '#f9c11c' }}></LinkIcon>
+                      <Typography className={classes.Typo2mail}>
+                        suat.bayrak@bilgiedu.net
+                      </Typography>
+                    </Link>
+                  </Typography>
+                </Fade>
               </Grid>
 
               <Grid
@@ -253,82 +263,85 @@ const Contact = () => {
                   <EmailIcon className={classes.emailIcon}></EmailIcon>
                 </Grid>
                 <Grid container item xs={12} className={classes.gridForm}>
-                  <form
-                    noValidate
-                    autoComplete='off'
-                    className={classes.form}
-                    onSubmit={handleSubmit}
-                    data-netlify='true'
-                    name='contact'
-                    method='post'
-                  >
-                    <input
-                      type='hidden'
-                      name='form-name'
-                      value='contact'
-                    ></input>
-                    <CssTextField
-                      label='Your name'
-                      variant='outlined'
-                      name='name'
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      className={classes.formTxt}
-                      color='secondary'
-                    ></CssTextField>
-                    <CssTextField
-                      label='Your e-mail'
-                      name='email'
-                      variant='outlined'
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className={classes.formTxt}
-                    ></CssTextField>
-                    <CssTextField
-                      label='Your message'
-                      variant='outlined'
-                      name='message'
-                      multiline
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      className={classes.formTxt}
-                      rows={10}
-                    />
-                    <Button
-                      variant='contained'
-                      type='submit'
-                      className={`${classes.formTxt}  ${classes.formBtn}`}
+                  {' '}
+                  <Fade right>
+                    <form
+                      noValidate
+                      autoComplete='off'
+                      className={classes.form}
                       onSubmit={handleSubmit}
+                      data-netlify='true'
+                      name='contact'
+                      method='post'
                     >
-                      Send <SendIcon style={{ marginLeft: '5px' }}></SendIcon>
-                    </Button>
-                  </form>
+                      <input
+                        type='hidden'
+                        name='form-name'
+                        value='contact'
+                      ></input>
+                      <CssTextField
+                        label='Your name'
+                        variant='outlined'
+                        name='name'
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className={classes.formTxt}
+                        color='secondary'
+                      ></CssTextField>
+                      <CssTextField
+                        label='Your e-mail'
+                        name='email'
+                        variant='outlined'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className={classes.formTxt}
+                      ></CssTextField>
+                      <CssTextField
+                        label='Your message'
+                        variant='outlined'
+                        name='message'
+                        multiline
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        className={classes.formTxt}
+                        rows={10}
+                      />
+                      <Button
+                        variant='contained'
+                        type='submit'
+                        className={`${classes.formTxt}  ${classes.formBtn}`}
+                        onSubmit={handleSubmit}
+                      >
+                        Send <SendIcon style={{ marginLeft: '5px' }}></SendIcon>
+                      </Button>
+                    </form>
 
-                  {showSnack === 'error' ? (
-                    <Snackbar
-                      autoHideDuration={6000}
-                      anchorOrigin={{ vertical, horizontal }}
-                      open={showSnack}
-                      message='I love snacks'
-                      key={vertical + horizontal}
-                    >
-                      <Alert severity={showSnack}>
-                        Please check your fields.
-                      </Alert>
-                    </Snackbar>
-                  ) : (
-                    <Snackbar
-                      autoHideDuration={6000}
-                      anchorOrigin={{ vertical, horizontal }}
-                      open={showSnack}
-                      message='I love snacks'
-                      key={vertical + horizontal}
-                    >
-                      <Alert severity={showSnack}>
-                        Success! Your message delivered.
-                      </Alert>
-                    </Snackbar>
-                  )}
+                    {showSnack === 'error' ? (
+                      <Snackbar
+                        autoHideDuration={6000}
+                        anchorOrigin={{ vertical, horizontal }}
+                        open={showSnack}
+                        message='I love snacks'
+                        key={vertical + horizontal}
+                      >
+                        <Alert severity={showSnack}>
+                          Please check your fields.
+                        </Alert>
+                      </Snackbar>
+                    ) : (
+                      <Snackbar
+                        autoHideDuration={6000}
+                        anchorOrigin={{ vertical, horizontal }}
+                        open={showSnack}
+                        message='I love snacks'
+                        key={vertical + horizontal}
+                      >
+                        <Alert severity={showSnack}>
+                          Success! Your message delivered.
+                        </Alert>
+                      </Snackbar>
+                    )}
+                  </Fade>
                 </Grid>
               </Grid>
             </Grid>

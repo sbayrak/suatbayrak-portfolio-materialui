@@ -1,4 +1,5 @@
 import React from 'react';
+import Fade from 'react-reveal/Fade';
 import mernLogo from '../../img/mern_logo.png';
 import reactLogo from '../../img/react_logo.png';
 import {
@@ -47,55 +48,57 @@ const PortfolioCard = ({ portfolio }) => {
   const classes = useStyles();
   return (
     <Grid item xs={12} sm={6} md={4}>
-      <Card className={classes.card}>
-        <CardActionArea>
-          <CardMedia
-            component='img'
-            alt='suatbayrak'
-            height='150'
-            image={portfolio.logo === 'mernLogo' ? mernLogo : reactLogo}
-            title='MERN'
-            className={classes.cardImg}
-          />
-          <CardContent>
-            <Typography gutterBottom variant='h5' component='h2'>
-              {portfolio.name}
-            </Typography>
-            <Typography
-              variant='body2'
-              color='textSecondary'
-              component='p'
-              className={classes.cardDesc}
-            >
-              {portfolio.desc}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions className={classes.bottomCardAction}>
-          <Button size='small' color='primary'>
-            <Link
-              href={portfolio.repo}
-              className={classes.bottomCardAction}
-              rel='noreferrer'
-              target='_blank'
-              style={{ textDecoration: 'none' }}
-            >
-              Repository
-            </Link>
-          </Button>
-          <Button size='small' color='primary'>
-            <Link
-              href={portfolio.website}
-              className={classes.bottomCardAction}
-              rel='noreferrer'
-              target='_blank'
-              style={{ textDecoration: 'none' }}
-            >
-              Website
-            </Link>
-          </Button>
-        </CardActions>
-      </Card>
+      <Fade right>
+        <Card className={classes.card}>
+          <CardActionArea>
+            <CardMedia
+              component='img'
+              alt='suatbayrak'
+              height='150'
+              image={portfolio.logo === 'mernLogo' ? mernLogo : reactLogo}
+              title='MERN'
+              className={classes.cardImg}
+            />
+            <CardContent>
+              <Typography gutterBottom variant='h5' component='h2'>
+                {portfolio.name}
+              </Typography>
+              <Typography
+                variant='body2'
+                color='textSecondary'
+                component='p'
+                className={classes.cardDesc}
+              >
+                {portfolio.desc}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions className={classes.bottomCardAction}>
+            <Button size='small' color='primary'>
+              <Link
+                href={portfolio.repo}
+                className={classes.bottomCardAction}
+                rel='noreferrer'
+                target='_blank'
+                style={{ textDecoration: 'none' }}
+              >
+                Repository
+              </Link>
+            </Button>
+            <Button size='small' color='primary'>
+              <Link
+                href={portfolio.website}
+                className={classes.bottomCardAction}
+                rel='noreferrer'
+                target='_blank'
+                style={{ textDecoration: 'none' }}
+              >
+                Website
+              </Link>
+            </Button>
+          </CardActions>
+        </Card>
+      </Fade>
     </Grid>
   );
 };
