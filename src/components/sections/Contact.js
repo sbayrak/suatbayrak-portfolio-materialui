@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from 'react';
-// import { useHistory } from 'react-router-dom';
 import {
   CssBaseline,
   Container,
@@ -8,6 +7,7 @@ import {
   Link,
   TextField,
   Button,
+  Snackbar,
 } from '@material-ui/core';
 import EmailIcon from '@material-ui/icons/Email';
 import SendIcon from '@material-ui/icons/Send';
@@ -151,7 +151,12 @@ const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  // const history = useHistory();
+  const [alert, setAlert] = useState({
+    open: false,
+    vertical: 'bottom',
+    horizontal: 'center',
+  });
+  const { vertical, horizontal, open } = alert;
 
   function emailIsValid(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -172,15 +177,22 @@ const Contact = () => {
       })
         .then((res) => {
           console.log(`hello`);
+          setAlert({ open: true, ...alert });
+          onFormSubmission();
+          setName('');
+          setEmail('');
+          setMessage('');
         })
         .catch((error) => alert(error));
     }
   };
-  // const redirectAfterSubmission = () => {
-  //   setTimeout(() => {
-  //     history.push('/success');
-  //   }, 1500);
-  // };
+
+  const onFormSubmission = () => {
+    setTimeout(() => {
+      setAlert({ open: !alert, ...alert });
+    }, 3000);
+  };
+
   const classes = useStyles();
   return (
     <Fragment>
@@ -284,6 +296,13 @@ const Contact = () => {
                   </form>
                 </Grid>
               </Grid>
+              <Snackbar
+                autoHideDuration={6000}
+                anchorOrigin={{ vertical, horizontal }}
+                open={open}
+                message='I love snacks'
+                key={vertical + horizontal}
+              />
             </Grid>
           </Container>
         </div>
