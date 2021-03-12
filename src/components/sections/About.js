@@ -111,7 +111,7 @@ const About = () => {
               </Typography>
 
               <Link
-                href='https://drive.google.com/file/d/1xpxKZNvMetVoSHOLADNefZ7W18xFW8p-/view'
+                href='https://drive.google.com/file/d/1kx3cO03cDEO_kTVt6Xjor0Gkt8txdBrR/view'
                 rel='noreferrer'
                 target='_blank'
                 className={classes.Link1}
