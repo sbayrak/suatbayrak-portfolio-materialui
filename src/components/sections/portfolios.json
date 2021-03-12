@@ -31,21 +31,21 @@
   {
     "logo": "reactLogo",
     "name": "PokemonAPI",
-    "desc": "Displaying all pokemons from PokeAPI, including pagination...",
+    "desc": "A fan of Pokemon ? You may find your favorite pokemons in this website among thousands of pokemons... ",
     "repo": "https://github.com/sbayrak/react-pokemonapi",
     "website": "https://react-pokemonapi.web.app/"
   },
   {
     "logo": "reactLogo",
     "name": "fbmessengerclone",
-    "desc": "Facebook Messenger clone with ReactJS and Firebase",
+    "desc": "Facebook Messenger clone. Enter your nickname and start chatting in a global chat!",
     "repo": "https://github.com/sbayrak/fbmessengerclone",
     "website": "https://fbmessengerclone-7bc8a.web.app/"
   },
   {
     "logo": "reactLogo",
     "name": "material-ui-blogpage",
-    "desc": "A basic page of a blog, fully responsive",
+    "desc": "A basic blog page including posts... Made with material-ui",
     "repo": "https://github.com/sbayrak/react-materialui-blogpage",
     "website": "https://materialui-blogpage.netlify.app/"
   }

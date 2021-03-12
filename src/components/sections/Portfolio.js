@@ -23,7 +23,7 @@ const Portfolio = () => {
 
   return (
     <Fragment>
-      <div id='#portfolio'>
+      <div id='portfolio'>
         <CssBaseline></CssBaseline>
         <Container maxWidth='lg'>
           <Grid container>

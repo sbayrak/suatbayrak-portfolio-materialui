@@ -186,7 +186,7 @@ const Navbar = () => {
               </Avatar>
             </IconButton>
             <Typography variant='h6' className={classes.leftTypo}>
-              <a href='#!' rel='noreferrer' className={classes.leftTypo}>
+              <a href='#home' rel='noreferrer' className={classes.leftTypo}>
                 Suat Bayrak
               </a>
             </Typography>

@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'start',
     flexDirection: 'column',
     alignItems: 'flex-start',
-    borderBottom: '1px solid rgba(249, 193, 28, 0.1)',
+    borderBottom: '1px solid rgba(249, 193, 28, 0.2)',
   },
   Typo2: {
     fontWeight: theme.typography.fontWeightMedium,
@@ -93,7 +93,7 @@ const About = () => {
     <Fragment>
       <CssBaseline></CssBaseline>
       <Container maxWidth='lg' className={classes.aboutContainer}>
-        <div id='#about'>
+        <div id='about'>
           <Grid container className={classes.gridContainer}>
             <Grid
               container

@@ -126,7 +126,7 @@ const Home = () => {
   return (
     <Fragment>
       <CssBaseline></CssBaseline>
-      <div id='#home'>
+      <div id='home'>
         <Container maxWidth='xl' className={classes.homeContainer}>
           <Grid
             container
