@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React, { Fragment, useState } from 'react';
+import MuiAlert from '@material-ui/lab/Alert';
 import {
   CssBaseline,
   Container,
@@ -60,6 +62,9 @@ const CssTextField = withStyles({
     },
   },
 })(TextField);
+function Alert(props) {
+  return <MuiAlert elevation={6} variant='filled' {...props} />;
+}
 const useStyles = makeStyles((theme) => ({
   contactContainer: {
     padding: theme.spacing(2),
@@ -153,16 +158,24 @@ const Contact = () => {
   const [message, setMessage] = useState('');
   const [alert, setAlert] = useState({
     open: false,
+    msg: '',
     vertical: 'bottom',
     horizontal: 'center',
   });
-  const { vertical, horizontal, open } = alert;
+  const { vertical, horizontal } = alert;
+  const [showSnack, setShowSnack] = useState('');
 
   function emailIsValid(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
   const handleSubmit = (e) => {
     e.preventDefault();
+    // const handleClick = (newState, msg) => () => {
+    //   setAlert({ open: true, msg: msg, ...newState });
+    //   setTimeout(() => {
+    //     setAlert(!alert);
+    //   }, 6000);
+    // };
 
     if (name && emailIsValid(email) && message) {
       fetch('/', {
@@ -177,22 +190,27 @@ const Contact = () => {
       })
         .then((res) => {
           console.log(`hello`);
-          setAlert({ open: true, ...alert });
-          onFormSubmission();
+          setShowSnack('success');
+          setTimeout(() => {
+            setShowSnack('');
+          }, 6000);
+          // let msg = 'success';
+          // handleClick(msg);
           setName('');
           setEmail('');
           setMessage('');
         })
-        .catch((error) => alert(error));
+        .catch((error) => console.log('catch'));
+    } else {
+      console.log('else');
+      setShowSnack('error');
+      setTimeout(() => {
+        setShowSnack('');
+      }, 6000);
     }
   };
 
-  const onFormSubmission = () => {
-    setTimeout(() => {
-      setAlert({ open: !alert, ...alert });
-    }, 3000);
-  };
-
+  console.log(`snackstate is ${showSnack}`);
   const classes = useStyles();
   return (
     <Fragment>
@@ -290,19 +308,48 @@ const Contact = () => {
                       variant='contained'
                       type='submit'
                       className={`${classes.formTxt}  ${classes.formBtn}`}
+                      onSubmit={handleSubmit}
                     >
                       Send <SendIcon style={{ marginLeft: '5px' }}></SendIcon>
                     </Button>
                   </form>
+
+                  {showSnack === 'error' ? (
+                    <Snackbar
+                      autoHideDuration={6000}
+                      anchorOrigin={{ vertical, horizontal }}
+                      open={showSnack}
+                      message='I love snacks'
+                      key={vertical + horizontal}
+                    >
+                      <Alert severity='error'>Please check your fields.</Alert>
+                    </Snackbar>
+                  ) : (
+                    <Snackbar
+                      autoHideDuration={6000}
+                      anchorOrigin={{ vertical, horizontal }}
+                      open={showSnack}
+                      message='I love snacks'
+                      key={vertical + horizontal}
+                    >
+                      <Alert severity='success'>
+                        Success! Your message delivered.
+                      </Alert>
+                    </Snackbar>
+                  )}
+                  {/* <Snackbar
+                    autoHideDuration={6000}
+                    anchorOrigin={{ vertical, horizontal }}
+                    open={open}
+                    message='I love snacks'
+                    key={vertical + horizontal}
+                  >
+                    <Alert severity={alert.msg}>
+                      Success! Your message delivered.
+                    </Alert>
+                  </Snackbar> */}
                 </Grid>
               </Grid>
-              <Snackbar
-                autoHideDuration={6000}
-                anchorOrigin={{ vertical, horizontal }}
-                open={open}
-                message='I love snacks'
-                key={vertical + horizontal}
-              />
             </Grid>
           </Container>
         </div>
