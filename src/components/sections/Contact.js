@@ -151,7 +151,7 @@ const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const history = useHistory();
+  // const history = useHistory();
 
   function emailIsValid(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -171,16 +171,16 @@ const Contact = () => {
         }),
       })
         .then((res) => {
-          redirectAfterSubmission();
+          console.log(`hello`);
         })
         .catch((error) => alert(error));
     }
   };
-  const redirectAfterSubmission = () => {
-    setTimeout(() => {
-      history.push('/success');
-    }, 1500);
-  };
+  // const redirectAfterSubmission = () => {
+  //   setTimeout(() => {
+  //     history.push('/success');
+  //   }, 1500);
+  // };
   const classes = useStyles();
   return (
     <Fragment>
