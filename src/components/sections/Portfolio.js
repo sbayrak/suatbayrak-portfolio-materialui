@@ -5,6 +5,12 @@ import PortfolioCard from './PortfolioCard';
 import portfoliosJSON from './portfolios.json';
 
 const useStyles = makeStyles((theme) => ({
+  portfolioContainer: {
+    paddingBottom: theme.spacing(20),
+    [theme.breakpoints.down('sm')]: {
+      paddingBottom: theme.spacing(15),
+    },
+  },
   Typo1: {
     fontWeight: theme.typography.fontWeightBold,
     color: theme.palette.grey[100],
@@ -25,7 +31,7 @@ const Portfolio = () => {
     <Fragment>
       <div id='portfolio'>
         <CssBaseline></CssBaseline>
-        <Container maxWidth='lg'>
+        <Container maxWidth='lg' className={classes.portfolioContainer}>
           <Grid container>
             <Grid
               container
