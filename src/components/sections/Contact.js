@@ -312,7 +312,9 @@ const Contact = () => {
                       message='I love snacks'
                       key={vertical + horizontal}
                     >
-                      <Alert severity='error'>Please check your fields.</Alert>
+                      <Alert severity={showSnack}>
+                        Please check your fields.
+                      </Alert>
                     </Snackbar>
                   ) : (
                     <Snackbar
@@ -322,7 +324,7 @@ const Contact = () => {
                       message='I love snacks'
                       key={vertical + horizontal}
                     >
-                      <Alert severity='success'>
+                      <Alert severity={showSnack}>
                         Success! Your message delivered.
                       </Alert>
                     </Snackbar>
