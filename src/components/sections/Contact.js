@@ -170,12 +170,6 @@ const Contact = () => {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const handleClick = (newState, msg) => () => {
-    //   setAlert({ open: true, msg: msg, ...newState });
-    //   setTimeout(() => {
-    //     setAlert(!alert);
-    //   }, 6000);
-    // };
 
     if (name && emailIsValid(email) && message) {
       fetch('/', {
@@ -189,20 +183,17 @@ const Contact = () => {
         }),
       })
         .then((res) => {
-          console.log(`hello`);
           setShowSnack('success');
           setTimeout(() => {
             setShowSnack('');
           }, 6000);
-          // let msg = 'success';
-          // handleClick(msg);
+
           setName('');
           setEmail('');
           setMessage('');
         })
         .catch((error) => console.log('catch'));
     } else {
-      console.log('else');
       setShowSnack('error');
       setTimeout(() => {
         setShowSnack('');
@@ -210,7 +201,6 @@ const Contact = () => {
     }
   };
 
-  console.log(`snackstate is ${showSnack}`);
   const classes = useStyles();
   return (
     <Fragment>
@@ -337,17 +327,6 @@ const Contact = () => {
                       </Alert>
                     </Snackbar>
                   )}
-                  {/* <Snackbar
-                    autoHideDuration={6000}
-                    anchorOrigin={{ vertical, horizontal }}
-                    open={open}
-                    message='I love snacks'
-                    key={vertical + horizontal}
-                  >
-                    <Alert severity={alert.msg}>
-                      Success! Your message delivered.
-                    </Alert>
-                  </Snackbar> */}
                 </Grid>
               </Grid>
             </Grid>
