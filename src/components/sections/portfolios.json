@@ -10,7 +10,7 @@
     "logo": "mernLogo",
     "name": "SBShop E-Commerce",
     "desc": "SBShop is a online shop sells electronics. Only PayPal payment is accepted. Stripe will come soon!. Also working on accepting crypto payments... ",
-    "repo": "https://github.com/sbayrak/proshop-mern",
+    "repo": "https://github.com/sbayrak/sbshop-mern",
     "website": "https://sbshop.herokuapp.com/"
   },
   {
